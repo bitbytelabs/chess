@@ -55,19 +55,16 @@ cargo build --release
 ```
 
 
-## Downloadable local trainer (fishtest-like)
+## Downloadable local trainer application (fishtest-like)
 
-If you want a downloadable workflow similar to fishtest (A/B engine testing), use the local trainer scripts:
+This repo now includes a built-in trainer application (`trainer`) for local A/B engine testing.
 
 ```bash
-./scripts/setup_fishtest_trainer.sh
-source .venv-fishtest/bin/activate
+# build both engine and trainer
+cargo build --release --bins
 
-# build engine binaries first
-cargo build --release
-
-# compare candidate vs baseline
-./scripts/fishtest_like_trainer.py \
+# run candidate vs baseline matches
+./target/release/trainer \
   --candidate ./target/release/chess \
   --baseline ./target/release/chess \
   --games 50 \
@@ -75,12 +72,12 @@ cargo build --release
 ```
 
 What it does:
-- downloads dependencies (`python-chess`) into a local virtualenv
-- runs repeated UCI matches with alternating colors
-- uses randomized opening plies for variety
-- reports W-D-L and an estimated Elo delta
+- launches both UCI engines and alternates colors across games
+- randomizes a configurable number of opening plies
+- enforces a per-move time budget
+- reports running W-D-L and estimated Elo delta
 
-This is intentionally lightweight and local (not a full distributed fishtest server), but it gives a practical engine-testing loop you can run on any machine.
+This is intentionally lightweight and local (not a full distributed fishtest server), but it gives you a practical downloadable trainer application with no Python dependency.
 
 ## "Train" it to be smarter
 
