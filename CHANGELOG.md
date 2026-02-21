@@ -1,6 +1,10 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## v0.4.0 - 2026-02-21
+- Merge pull request #4 from bitbytelabs/bitbytelabs/find-usage-instructions-2026-02-21-16-57-52 (2144f56)
+- feat: add run and engine-strength tuning guide (f5d923e)
+
 ## v0.3.0 - 2026-02-21
 - Merge pull request #3 from bitbytelabs/bitbytelabs/add-engine-correctness-and-perft-regression-tests-2026-02-21-16-48-21 (592cd6d)
 - feat: add engine correctness and perft regression tests (c66e3d6)
