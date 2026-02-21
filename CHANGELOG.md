@@ -1,6 +1,11 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## v0.7.0 - 2026-02-21
+- Merge pull request #9 from bitbytelabs/bitbytelabs/create-next-steps-plan-2026-02-21-17-43-12 (4191b23)
+- feat: add trainer application for local engine matches (ab81eb0)
+- feat: add fishtest-like local trainer scripts (02ab01d)
+
 ## v0.6.0 - 2026-02-21
 - Merge pull request #8 from bitbytelabs/bitbytelabs/create-powershell-script-for-setup-and-training-2026-02-21-17-31-47 (5f2c2fc)
 - feat: add PowerShell scripts for nnue-pytorch setup and training (3ae0c32)
