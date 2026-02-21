@@ -1,6 +1,10 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## v0.5.0 - 2026-02-21
+- Merge pull request #7 from bitbytelabs/bitbytelabs/find-usefulness-of-stockfish-books-for-ai-training-2026-02-21-17-20-11 (bb9612b)
+- feat: add nnue-pytorch setup and training scripts (4582853)
+
 ## v0.4.1 - 2026-02-21
 - Merge pull request #5 from bitbytelabs/bitbytelabs/make-compatible-for-windows-2026-02-21-17-06-56 (6923729)
 - fix: add windows compatibility scripts and ci (9b5c106)
