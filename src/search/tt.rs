@@ -120,6 +120,12 @@ pub struct TranspositionTable {
     entries: HashMap<u64, TTEntry>,
 }
 
+impl Default for TranspositionTable {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl TranspositionTable {
     pub fn new() -> Self {
         Self {

@@ -54,6 +54,34 @@ cargo build --release
 ./target/release/chess.exe
 ```
 
+
+## Downloadable local trainer (fishtest-like)
+
+If you want a downloadable workflow similar to fishtest (A/B engine testing), use the local trainer scripts:
+
+```bash
+./scripts/setup_fishtest_trainer.sh
+source .venv-fishtest/bin/activate
+
+# build engine binaries first
+cargo build --release
+
+# compare candidate vs baseline
+./scripts/fishtest_like_trainer.py \
+  --candidate ./target/release/chess \
+  --baseline ./target/release/chess \
+  --games 50 \
+  --movetime-ms 100
+```
+
+What it does:
+- downloads dependencies (`python-chess`) into a local virtualenv
+- runs repeated UCI matches with alternating colors
+- uses randomized opening plies for variety
+- reports W-D-L and an estimated Elo delta
+
+This is intentionally lightweight and local (not a full distributed fishtest server), but it gives a practical engine-testing loop you can run on any machine.
+
 ## "Train" it to be smarter
 
 This engine does not use neural-network training. Strength comes from improving search/evaluation and validating with tests/benchmarks.
