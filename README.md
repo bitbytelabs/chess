@@ -76,3 +76,19 @@ Recommended workflow:
    ```
 
 If you want true ML-style training, you would need to add a separate self-play data pipeline and a learned evaluation model (not present in this repo today).
+
+### Are Stockfish opening books useful for "training"?
+
+Short answer: **helpful for opening play, but not training by themselves**.
+
+- Books like <https://github.com/official-stockfish/books> can improve early-game move choice if you integrate book lookup into move selection.
+- They do **not** train the engine's evaluation/search logic on their own.
+- For this project, treat a book as an optional opening module; engine strength still mostly comes from search/eval improvements and testing.
+
+### Does `official-stockfish/nnue-pytorch` help?
+
+Short answer: **yes, if you want real ML-style training**.
+
+- <https://github.com/official-stockfish/nnue-pytorch> is a training pipeline for NNUE networks, which is much closer to true model training than opening books.
+- To benefit in this repo, you would need to add NNUE inference support in the engine and replace/augment the current hand-crafted evaluation path.
+- You still need strong validation (tactical tests, perft/movegen safety, and time-controlled engine matches) after integrating a trained network.
