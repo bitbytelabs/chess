@@ -1,6 +1,10 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## v0.6.0 - 2026-02-21
+- Merge pull request #8 from bitbytelabs/bitbytelabs/create-powershell-script-for-setup-and-training-2026-02-21-17-31-47 (5f2c2fc)
+- feat: add PowerShell scripts for nnue-pytorch setup and training (3ae0c32)
+
 ## v0.5.0 - 2026-02-21
 - Merge pull request #7 from bitbytelabs/bitbytelabs/find-usefulness-of-stockfish-books-for-ai-training-2026-02-21-17-20-11 (bb9612b)
 - feat: add nnue-pytorch setup and training scripts (4582853)
