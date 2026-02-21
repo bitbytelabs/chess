@@ -100,6 +100,10 @@ Short answer: **yes, if you want real ML-style training**.
   ```bash
   ./scripts/setup_nnue_pytorch.sh
   ./scripts/train_nnue.sh
+
+  # Windows (PowerShell)
+  ./scripts/setup_nnue_pytorch.ps1
+  ./scripts/train_nnue.ps1
   ```
 - To benefit in this engine, you would still need NNUE inference support and to replace/augment the current hand-crafted evaluation path.
 - Keep validating with tactical tests, perft/movegen safety checks, and engine-vs-engine matches after integration.
