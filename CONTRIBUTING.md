@@ -18,6 +18,24 @@ Use commit messages in this exact style:
 
 These formats are required because the GitHub Action parses commit history to bump `VERSION`, sync `Cargo.toml`, and regenerate `CHANGELOG.md` automatically.
 
+### How to use this in practice
+
+1. Pick the right commit type for the change:
+   - Bug fix with no breaking changes: `fix:`
+   - New backward-compatible feature: `feat:`
+   - Breaking API/behavior change: `feat!:` (or include `BREAKING CHANGE` in the body)
+2. Write the commit as `<type>: <short description>`.
+3. Keep the description imperative and concise (for example, `fix: handle missing config file`).
+4. Push your branch; the release workflow will determine the version bump from your commit history.
+
+Example flow:
+
+```bash
+git add .
+git commit -m "fix: correct typo"
+git push
+```
+
 ## Test and merge requirements
 
 All pull requests must pass the `CI / test` workflow before merge. The workflow runs:
