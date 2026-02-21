@@ -47,3 +47,5 @@ Engine benchmark scripts are available for local performance tracking:
 
 - `./scripts/bench_nodes_per_sec.sh`
 - `./scripts/bench_depth_budget.sh`
+- `./scripts/bench_nodes_per_sec.ps1` (Windows PowerShell)
+- `./scripts/bench_depth_budget.ps1` (Windows PowerShell)

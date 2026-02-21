@@ -50,6 +50,8 @@ Point the GUI engine path to this binary:
 cargo build --release
 # binary path:
 ./target/release/chess
+# Windows binary path:
+./target/release/chess.exe
 ```
 
 ## "Train" it to be smarter
@@ -62,6 +64,10 @@ Recommended workflow:
    ```bash
    ./scripts/bench_nodes_per_sec.sh
    ./scripts/bench_depth_budget.sh
+
+   # Windows (PowerShell)
+   ./scripts/bench_nodes_per_sec.ps1
+   ./scripts/bench_depth_budget.ps1
    ```
 2. **Improve evaluation/search**
    - Tune material values in `src/search/eval.rs`
