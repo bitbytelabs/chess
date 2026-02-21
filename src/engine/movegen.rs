@@ -138,7 +138,7 @@ fn gen_knight_moves(state: &GameState, from: usize, out: &mut Vec<Move>) {
             continue;
         }
         let to = square(tf as usize, tr as usize);
-        if state.board[to].map_or(true, |p| p.color != piece.color) {
+        if state.board[to].is_none_or(|p| p.color != piece.color) {
             out.push(Move::new(from, to));
         }
     }
@@ -186,7 +186,7 @@ fn gen_king_moves(state: &GameState, from: usize, out: &mut Vec<Move>) {
                 continue;
             }
             let to = square(tf as usize, tr as usize);
-            if state.board[to].map_or(true, |p| p.color != piece.color) {
+            if state.board[to].is_none_or(|p| p.color != piece.color) {
                 out.push(Move::new(from, to));
             }
         }

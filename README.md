@@ -54,6 +54,31 @@ cargo build --release
 ./target/release/chess.exe
 ```
 
+
+## Downloadable local trainer application (fishtest-like)
+
+This repo now includes a built-in trainer application (`trainer`) for local A/B engine testing.
+
+```bash
+# build both engine and trainer
+cargo build --release --bins
+
+# run candidate vs baseline matches
+./target/release/trainer \
+  --candidate ./target/release/chess \
+  --baseline ./target/release/chess \
+  --games 50 \
+  --movetime-ms 100
+```
+
+What it does:
+- launches both UCI engines and alternates colors across games
+- randomizes a configurable number of opening plies
+- enforces a per-move time budget
+- reports running W-D-L and estimated Elo delta
+
+This is intentionally lightweight and local (not a full distributed fishtest server), but it gives you a practical downloadable trainer application with no Python dependency.
+
 ## "Train" it to be smarter
 
 This engine does not use neural-network training. Strength comes from improving search/evaluation and validating with tests/benchmarks.
